@@ -1,0 +1,109 @@
+/* CLASES DE UTILIDAD */
+.max-w-250 {
+    max-width: 250px;
+}
+
+/* BARRA LATERAL PANTALLAS GRANDES */
+@media (min-width: 992px) {
+    .sticky-sidebar {
+        position: sticky;
+        top: 1.5rem;
+        align-self: start;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    .sticky-sidebar::-webkit-scrollbar {
+        width: 0px;
+    }
+}
+
+/* HOVER INTERACTIVO PARA LAS TARJETAS DE TAREAS */
+.task-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    position: relative;
+    will-change: transform;
+}
+
+.task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(13, 110, 253, 0.2);
+    border-color: var(--bs-primary) !important;
+    z-index: 2;
+}
+
+/* DECORACIÓN TAREAS COMPLETADAS */
+.task-completed .task-desc {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* ESTILO BADGES DE CUENTA REGRESIVA */
+.countdown-badge {
+    font-size: 0.75rem;
+    font-family: monospace;
+}
+
+/* ANIMACIONES SIMPLES ENTRADA TAREA CREADA */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-animate-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* ESTILOS ALTURA MÁXIMA Y SCROLLBAR */
+.tasks-scroll-container {
+    height: auto;
+    max-height: 538px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+@media (min-height: 800px) and (min-width: 992px) {
+    .tasks-scroll-container {
+        max-height: 66vh;
+    }
+}
+
+.tasks-scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tasks-scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.tasks-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(13, 110, 253, 0.4);
+    border-radius: 4px;
+}
+
+.tasks-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(13, 110, 253, 0.7);
+}
+
+/* ESTILOS CATEGORÍA */
+.badge-category {
+    font-size: 0.75rem;
+    padding: 0.35em 0.65em;
+}
